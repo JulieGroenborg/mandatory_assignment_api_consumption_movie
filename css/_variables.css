@@ -1,0 +1,15 @@
+:root{
+    --spaceSmallMobile: 5px;
+    --spaceMediumMobile: 10px;
+    --spaceBigMobile: 25px;
+
+    --imageHeightMobile: 350px;
+
+    --primaryColor: rgb(105, 14, 14);
+    --secondaryColor: rgb(202, 70, 70);
+    --black: black;
+
+    --textColorWhite: rgb(235, 240, 240);
+    
+    
+}

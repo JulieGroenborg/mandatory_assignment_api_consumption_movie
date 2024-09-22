@@ -1,0 +1,50 @@
+@import "_variables.css";
+*{
+    padding: 0;
+    margin: 0;
+}
+ul {
+    list-style: none;
+    background-color: var(--secondaryColor);
+
+    button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        margin: var(--spaceSmallMobile);
+        color: var(--textColorWhite);
+    }
+    button.active{
+        border-bottom: solid var(--black) 2px;
+    }
+}
+
+h1, h2{
+    padding-left: var(--spaceSmallMobile);
+    background-color: var(--primaryColor);
+    color: var(--textColorWhite);
+}
+
+article{
+    margin: var(--spaceBigMobile);
+    background-color: rgb(231, 223, 211);
+    padding-bottom: var(--spaceSmallMobile);
+    
+    img {
+        height: var(--imageHeightMobile);
+        display: grid;
+        margin: auto auto;
+    }
+
+    p{
+        margin: var(--spaceMediumMobile);
+    }
+}
+
+@media (min-width: 670px){
+    ul{display: flex;}
+
+  div{
+    display: flex;
+  }
+}
