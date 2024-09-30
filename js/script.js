@@ -37,6 +37,12 @@ function fetchMovies(endpoint) {
     fetch(baseUrl + endpoint + apiKey)
         .then((response) => response.json())
         .then((data) => {
+            // The section from the DOM
+            const domSection = document.getElementById("movies_container");
+
+            // Create a DocumentFragment to accumulate all movie articles
+            const fragment = document.createDocumentFragment();
+
             data.results.forEach((theChosenGenre) => {
                 const movieTitleText = document.createTextNode(theChosenGenre.title);
                 const movieTitle = document.createElement("h2");
@@ -66,8 +72,12 @@ function fetchMovies(endpoint) {
                 const movieArticle = document.createElement("article");
                 movieArticle.append(movieTitle, theDiv);
 
-                document.getElementById("movies_container").append(movieArticle);
+                // Append movieArticle to the fragment instead of directly to the DOM
+                fragment.appendChild(movieArticle);
             });
+
+             // After the loop, append the entire fragment to the DOM at once. By appending everything at once, I minimize reflows and repaints, improving performance.
+            domSection.append(fragment);
         });
 }
 
